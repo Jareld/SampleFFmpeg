@@ -1,0 +1,25 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+//这是定义在顶层build.grdle的一个task 可以注意task和projection和action的关系
+//task有很多类型，代表test是做什么事情的，在文档上是这样标注的：delete files or direcstories
+//说明这是一个删除的任务 ，删除哪里 就由里面的内容所决定
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
